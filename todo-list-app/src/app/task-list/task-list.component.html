@@ -1,0 +1,52 @@
+<h2>Task List</h2>
+
+<!-- Button Container -->
+<div class="button-container">
+    <button class="add-task" (click)="toggleForm()">Add New Task</button>
+    <button class="refresh" (click)="refreshTasks()">Refresh</button>
+</div>
+
+<!-- Search Bar -->
+<div class="search-bar">
+    <input type="text" placeholder="Search tasks..." [(ngModel)]="searchText" (input)="filterTasks()" />
+    <button class="search-button" (click)="filterTasks()">Search</button>
+</div>
+
+<!-- Task Table -->
+<table class="task-table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Comments</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of filteredTasks; let i = index">
+            <td data-label="Task">{{ task.name }}</td>
+            <td data-label="Assigned To">{{ task.assignedTo }}</td>
+            <td data-label="Status">{{ task.status }}</td>
+            <td data-label="Due Date">{{ task.dueDate | date:'shortDate' }}</td>
+            <td data-label="Priority">{{ task.priority }}</td>
+            <td data-label="Comments">{{ task.comments }}</td>
+            <td data-label="Actions">
+                <button (click)="deleteTask(i)" class="delete">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+    <button (click)="changePage(1)" [disabled]="currentPage === 1">First</button>
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+    
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    <button (click)="changePage(totalPages)" [disabled]="currentPage === totalPages">Last</button>
+</div>

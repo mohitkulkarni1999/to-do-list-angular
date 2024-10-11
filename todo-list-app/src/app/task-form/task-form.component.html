@@ -1,0 +1,55 @@
+<form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+    <!-- Task Name -->
+    <div class="form-group">
+      <label for="task">Task</label>
+      <input type="text" id="task" [(ngModel)]="task.name" name="task" required />
+      <div *ngIf="taskForm.submitted && !task.name" class="error-message">
+        Task is required.
+      </div>
+    </div>
+  
+    <!-- Assigned To -->
+    <div class="form-group">
+      <label for="assignedTo">Assigned To</label>
+      <input type="text" id="assignedTo" [(ngModel)]="task.assignedTo" name="assignedTo" required />
+      <div *ngIf="taskForm.submitted && !task.assignedTo" class="error-message">
+        Assigned To is required.
+      </div>
+    </div>
+  
+    <!-- Status -->
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" [(ngModel)]="task.status" name="status" required>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+  
+    <!-- Due Date -->
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" [(ngModel)]="task.dueDate" name="dueDate" />
+    </div>
+  
+    <!-- Priority -->
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <select id="priority" [(ngModel)]="task.priority" name="priority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+  
+    <!-- Comments -->
+    <div class="form-group">
+      <label for="comments">Comments</label>
+      <textarea id="comments" [(ngModel)]="task.comments" name="comments"></textarea>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="!taskForm.form.valid">Add Task</button>
+  </form>
+  

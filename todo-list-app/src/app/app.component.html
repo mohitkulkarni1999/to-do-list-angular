@@ -1,0 +1,7 @@
+<h1>To-Do List Application</h1>
+<button (click)="toggleForm()">{{ showForm ? 'Cancel' : 'Add New Task' }}</button>
+
+<!-- Show the task form only if showForm is true -->
+<app-task-form *ngIf="showForm"></app-task-form>
+
+<app-task-list></app-task-list>

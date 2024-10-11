@@ -1,0 +1,81 @@
+.button-container {
+    display: flex; /* Align buttons horizontally */
+    justify-content: flex-end; /* Align to the right */
+    margin-bottom: 20px; /* Space below the buttons */
+}
+
+.button-container button {
+    margin-left: 10px; /* Space between buttons */
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* No border */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.search-bar {
+    margin-bottom: 20px; /* Space below the search bar */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px; /* Padding for the input */
+    margin-right: 10px; /* Space between input and button */
+    flex: 1; /* Allow the input to take up available space */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+}
+
+.search-button {
+    padding: 8px 12px; /* Padding for the search button */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* No border */
+    background-color: #28a745; /* Green button color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.search-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.task-table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Merge borders of cells */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+.task-table th, .task-table td {
+    padding: 12px; /* Padding for cells */
+    border: 1px solid #ddd; /* Border for cells */
+    text-align: left; /* Align text to the left */
+}
+
+.task-table th {
+    background-color: #f4f4f4; /* Light grey background for headers */
+}
+
+.pagination {
+    display: flex; /* Use flexbox for pagination */
+    justify-content: center; /* Center pagination controls */
+    margin-top: 20px; /* Space above pagination */
+}
+
+.pagination button {
+    padding: 8px 12px; /* Padding for pagination buttons */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* No border */
+    background-color: #007bff; /* Button color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.pagination button:disabled {
+    background-color: #ccc; /* Grey background for disabled buttons */
+}
